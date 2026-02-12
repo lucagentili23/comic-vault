@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466267175234",
+    "project_id": "comic-vault-7937a",
+    "storage_bucket": "comic-vault-7937a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466267175234:android:3f3419d6e097eb2c9230db",
+        "android_client_info": {
+          "package_name": "com.lucagentili.comicvault"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2Z5RwiUaSI4hdIn3beCVWFzb6D9svmEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
