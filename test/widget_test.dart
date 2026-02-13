@@ -1,30 +1,19 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:comicvault/main.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:comicvault/app.dart';
+// Nota: Nei test unitari complessi dovremmo mockare Firebase e Dotenv,
+// ma per ora verifichiamo solo che l'app parta ignorando l'init del main.
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  testWidgets('App starts and shows Home Screen', (WidgetTester tester) async {
+    // PumpWidget avvia l'app nell'ambiente di test.
+    // Dobbiamo avvolgerla in ProviderScope anche qui!
+    await tester.pumpWidget(const ProviderScope(child: ComicVaultApp()));
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Aspetta che le animazioni finiscano
+    await tester.pumpAndSettle();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verifica che ci sia il testo della Home
+    expect(find.text('Benvenuto in ComicVault!'), findsOneWidget);
   });
 }
