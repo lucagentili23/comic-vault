@@ -6,14 +6,8 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login')),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            // Qui implementeremo la chiamata al repository
-          },
-          child: const Text('Sign In (Coming Soon)'),
-        ),
+        child: ElevatedButton(onPressed: () {}, child: const Text('Sign In')),
       ),
     );
   }
