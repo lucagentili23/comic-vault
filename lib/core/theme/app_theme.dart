@@ -9,6 +9,7 @@ class AppTheme {
     return ThemeData(
       textTheme: GoogleFonts.montserratTextTheme().apply(
         bodyColor: onPrimaryColor,
+        displayColor: onPrimaryColor,
       ),
 
       iconTheme: IconThemeData(color: onPrimaryColor),
@@ -33,6 +34,27 @@ class AppTheme {
             fontWeight: FontWeight.w500,
             letterSpacing: 1.2,
           ),
+        ),
+      ),
+
+      inputDecorationTheme: InputDecorationTheme(
+        labelStyle: TextStyle(color: onPrimaryColor),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30.0),
+          borderSide: const BorderSide(color: onPrimaryColor, width: 1),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: onPrimaryColor, width: 2.0),
+          borderRadius: BorderRadius.circular(30.0),
+        ),
+      ),
+
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: onPrimaryColor,
+          overlayColor: onPrimaryColor,
+          textStyle: TextStyle(fontSize: 18),
         ),
       ),
     );
